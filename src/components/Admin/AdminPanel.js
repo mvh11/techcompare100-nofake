@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // src/components/Admin/AdminPanel.js
+=======
+>>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
 import React from 'react';
 import GPUCatalog from '../Catalog/GPUCatalog';
 import UserCatalog from '../Catalog/UserCatalog';

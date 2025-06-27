@@ -3,7 +3,11 @@ import React from 'react';
 const calculatePerformanceScore = (gpu) => {
   if (!gpu) return 0;
   
+<<<<<<< HEAD
   // Ponderación de características
+=======
+
+>>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
   const weights = {
     cudaCores: 0.4,
     vram: 0.3,
@@ -11,12 +15,20 @@ const calculatePerformanceScore = (gpu) => {
     boostClock: 0.15
   };
 
+<<<<<<< HEAD
   // Extraer valores numéricos
+=======
+
+>>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
   const vram = parseInt(gpu.vram);
   const memoryBus = parseInt(gpu.memoryBus);
   const boostClock = parseFloat(gpu.boostClock);
   
+<<<<<<< HEAD
   // Calcular puntaje normalizado
+=======
+
+>>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
   const score = (
     (gpu.cudaCores * weights.cudaCores) +
     (vram * weights.vram) +
@@ -32,7 +44,11 @@ const ComparisonResult = ({ gpu1, gpu2 }) => {
   const score2 = calculatePerformanceScore(gpu2);
   const winner = score1 > score2 ? gpu1 : gpu2;
   const difference = Math.abs(score1 - score2);
+<<<<<<< HEAD
   const isClose = difference < (Math.max(score1, score2) * 0.1); // Menos del 10% de diferencia
+=======
+  const isClose = difference < (Math.max(score1, score2) * 0.1);
+>>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
 
   const getPerformanceDifference = () => {
     const percent = (difference / Math.min(score1, score2)) * 100;

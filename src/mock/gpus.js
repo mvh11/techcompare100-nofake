@@ -28,6 +28,10 @@ export const gpus = [
     tdp: '220W',
     image: '/gpus/rtx3070.jpg'
   },
+<<<<<<< HEAD
   // ... (resto de las GPUs con valores numéricos en los campos relevantes)
+=======
+
+>>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
 ];
 
