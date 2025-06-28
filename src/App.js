@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 // src/App.js
-=======
-
->>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
 import React, { useState, useEffect } from 'react';
 import AuthForm from './components/Auth/AuthForm';
 import GPUComparison from './components/Compare/GPUComparison';
@@ -17,7 +13,6 @@ function App() {
   const [currentView, setCurrentView] = useState('main');
   const [selectedGPUs, setSelectedGPUs] = useState([]);
 
-<<<<<<< HEAD
   // ① Cargo GPUs al iniciar
 useEffect(() => {
   fetch('http://localhost:8081/api/gpus')
@@ -34,43 +29,21 @@ useEffect(() => {
 }, []);
 
   // ② Handler de login
-=======
-
-  useEffect(() => {
-    fetch('http://localhost:8081/api/gpus')
-      .then(r => r.json())
-      .then(data => setGpus(Array.isArray(data) ? data : []))
-      .catch(() => setGpus([]));
-  }, []);
-
-
->>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
   const handleLogin = u => {
     setUser(u);
     setCurrentView('main');
   };
 
-<<<<<<< HEAD
   // ③ Handler de comparar
-=======
-
->>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
   const handleCompare = ids => {
     setSelectedGPUs(ids);
     setCurrentView('compare');
   };
 
-<<<<<<< HEAD
   // ④ Reviso la ruta (window.location.pathname)
   const path = window.location.pathname;
 
   //  — Protejo /admin:
-=======
-
-  const path = window.location.pathname;
-
-
->>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
   if (path === '/admin') {
     if (!user) {
       return <AuthForm onSuccess={handleLogin} />;
@@ -78,20 +51,12 @@ useEffect(() => {
     return <AdminPanel />;
   }
 
-<<<<<<< HEAD
   //  — Si no hay usuario, muestro login/registro
-=======
-
->>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
   if (!user) {
     return <AuthForm onSuccess={handleLogin} />;
   }
 
-<<<<<<< HEAD
   //  — Si estoy en modo “compare” dentro de React
-=======
-
->>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
   if (currentView === 'compare') {
     return (
       <div className="min-h-screen bg-gray-900 text-white p-8">
@@ -116,11 +81,7 @@ useEffect(() => {
     );
   }
 
-<<<<<<< HEAD
   //  — Vista principal (selección de GPUs)
-=======
-
->>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
   return (
     <div className="min-h-screen bg-gray-900 text-white p-8">
       <NavBar userName={user.nombre || user.username} />

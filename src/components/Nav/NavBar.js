@@ -12,11 +12,7 @@ const NavBar = ({ userName }) => {
             <div className="h-8 w-8 rounded-full bg-purple-600 flex items-center justify-center text-white font-medium">
               {userName.charAt(0).toUpperCase()}
             </div>
-<<<<<<< HEAD
             <span className="text-gray-300">{userName}</span>
-=======
-            <span className="text-gray-300 flex-auto">{userName}</span>
->>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
           </div>
         )}
       </div>

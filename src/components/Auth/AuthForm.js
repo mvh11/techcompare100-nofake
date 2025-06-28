@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
 import React, { useState } from 'react';
 
 const AuthForm = ({ onSuccess }) => {
@@ -33,42 +29,30 @@ const AuthForm = ({ onSuccess }) => {
     setLoading(true);
     try {
       if (isLogin) {
-<<<<<<< HEAD
-        // LOGIN: GET usuarios y validar email+password vía HAL
-=======
-
->>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
+        // LOGIN: GET usuarios y validar email+password
         const res = await fetch('http://localhost:8080/api/usuarios');
         if (!res.ok) {
           const text = await res.text();
           throw new Error(`GET usuarios falló (${res.status}): ${text}`);
         }
-<<<<<<< HEAD
-        const data = await res.json();
-        const list = data._embedded?.usuarios || [];
-=======
-        const list = await res.json();
->>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
-        const user = list.find(u => u.email === email && u.password === password);
+        const raw = await res.json();
+        // ❗️ Usamos el array correcto del HAL
+        const list = raw._embedded?.usuarioList || raw;
+        const user = list.find(u =>
+          u.email === email.trim() &&
+          u.password === password
+        );
         if (!user) throw new Error('Email o contraseña incorrectos');
         onSuccess(user);
 
       } else {
-<<<<<<< HEAD
         // REGISTRO: POST con password incluido
         const payload = {
-          nombre:   username,
-          email,
+          nombre:   username.trim(),
+          email:    email.trim(),
           password,
-          gpu1:    '',
-          gpu2:    ''
-=======
-
-        const payload = {
-          nombre:   username,
-          email,
-          password
->>>>>>> 0066a2f60ee8f08478a19471503421e89a32e096
+          gpu1:     '',
+          gpu2:     ''
         };
         const res = await fetch('http://localhost:8080/api/usuarios', {
           method: 'POST',
