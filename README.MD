@@ -6,9 +6,7 @@ Iniciar MicroServicios:
 
 Entrar al Panel de Control:
 
-Panel de administrador: [http://127.0.0.1:3000/admin](http://127.0.0.1:3000/admin)  
-Usuario: admin  
-Contraseña: admin1  
+Panel de administrador: [http://127.0.0.1:3000/admin](http://127.0.0.1:3000/admin)   
 
 Para añadir GPU de ejemplo:
 - Modelo: RTX 4060
